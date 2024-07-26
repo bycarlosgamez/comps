@@ -4,28 +4,118 @@ function App() {
   return (
     <>
       <h1 className='text-3xl font-bold underline'>Buttons</h1>
-      <div>
-        <Button success rounded outline>
-          Click me!!
-        </Button>
+      <div className='default'>
+        <div>
+          <Button primary>Primary</Button>
+        </div>
+        <div>
+          <Button secondary>Secondary</Button>
+        </div>
+        <div>
+          <Button success>Success</Button>
+        </div>
+        <div>
+          <Button warning>Warning</Button>
+        </div>
+        <div>
+          <Button danger>Danger</Button>
+        </div>
+        <div>
+          <Button>Plain</Button>
+        </div>
       </div>
-      <div>
-        <Button danger outline>
-          Send
-        </Button>
+      <div className='rounded'>
+        <div>
+          <Button primary rounded>
+            Primary
+          </Button>
+        </div>
+        <div>
+          <Button secondary rounded>
+            Secondary
+          </Button>
+        </div>
+        <div>
+          <Button success rounded>
+            Success
+          </Button>
+        </div>
+        <div>
+          <Button warning rounded>
+            Warning
+          </Button>
+        </div>
+        <div>
+          <Button danger rounded>
+            Danger
+          </Button>
+        </div>
+        <div>
+          <Button rounded>Plain</Button>
+        </div>
       </div>
-      <div>
-        <Button warning>Buy Now!</Button>
+
+      <div className='outlined'>
+        <div>
+          <Button primary outline>
+            Primary
+          </Button>
+        </div>
+        <div>
+          <Button secondary outline>
+            Secondary
+          </Button>
+        </div>
+        <div>
+          <Button success outline>
+            Success
+          </Button>
+        </div>
+        <div>
+          <Button warning outline>
+            Warning
+          </Button>
+        </div>
+        <div>
+          <Button danger outline>
+            Danger
+          </Button>
+        </div>
+        <div>
+          <Button outline>Plain</Button>
+        </div>
       </div>
-      <div>
-        <Button secondary outline>
-          See Deal
-        </Button>
-      </div>
-      <div>
-        <Button secondary rounded>
-          Hide Ads
-        </Button>
+      <div className='outlined-rounded'>
+        <div>
+          <Button primary outline rounded>
+            Primary
+          </Button>
+        </div>
+        <div>
+          <Button secondary outline rounded>
+            Secondary
+          </Button>
+        </div>
+        <div>
+          <Button success outline rounded>
+            Success
+          </Button>
+        </div>
+        <div>
+          <Button warning outline rounded>
+            Warning
+          </Button>
+        </div>
+        <div>
+          <Button danger outline rounded>
+            Danger
+          </Button>
+        </div>
+        <div>
+          <Button outline rounded>
+            Plain
+          </Button>
+        </div>
       </div>
     </>
   );
