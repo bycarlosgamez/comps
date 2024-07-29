@@ -1,12 +1,18 @@
 import Button from './components/Button';
 
 function App() {
+  const handleClick = () => {
+    console.log('Click');
+  };
+
   return (
     <>
       <h1 className='text-3xl font-bold underline'>Buttons</h1>
       <div className='default'>
         <div>
-          <Button primary>Primary</Button>
+          <Button primary onClick={handleClick}>
+            Primary
+          </Button>
         </div>
         <div>
           <Button secondary>Secondary</Button>
