@@ -5,33 +5,28 @@ function Button({
   primary,
   secondary,
   success,
-  danger,
   warning,
+  danger,
   outline,
   rounded,
   ...rest
 }) {
   const classes = className(
-    'flex item-center px-4',
-    'py-2',
-    'border-2',
-    'font-medium',
+    rest.className,
+    'flex items-center px-3 py-1.5 border',
     {
-      'border-purple-600 bg-purple-600': primary,
-      'border-teal-500 bg-teal-500': secondary,
-      'border-green-500 bg-green-500': success,
-      'border-red-500  bg-red-500': danger,
-      'border-yellow-500 bg-yellow-500': warning,
-      'border-gray-800 bg-gray-800':
-        !primary && !secondary && !success && !danger && !warning,
+      'border-blue-500 bg-blue-500 text-white': primary,
+      'border-gray-900 bg-gray-900 text-white': secondary,
+      'border-green-500 bg-green-500 text-white': success,
+      'border-yellow-400 bg-yellow-400 text-white': warning,
+      'border-red-500 bg-red-500 text-white': danger,
       'rounded-full': rounded,
-      rounded: !rounded,
-      'text-white': !outline,
-      'bg-white text-purple-600': outline && primary,
-      'bg-white text-teal-500': outline && secondary,
-      'bg-white text-green-500': outline && success,
-      'bg-white text-red-500': outline && danger,
-      'bg-white text-yellow-500': outline && warning,
+      'bg-white': outline,
+      'text-blue-500': outline && primary,
+      'text-gray-900': outline && secondary,
+      'text-green-500': outline && success,
+      'text-yellow-400': outline && warning,
+      'text-red-500': outline && danger,
     }
   );
 
@@ -43,15 +38,19 @@ function Button({
 }
 
 Button.propTypes = {
-  valueValidation: ({ primary, secondary, success, danger, warning }) => {
+  checkVariationValue: ({ primary, secondary, success, warning, danger }) => {
     const count =
       Number(!!primary) +
       Number(!!secondary) +
+      Number(!!warning) +
       Number(!!success) +
-      Number(!!danger) +
-      Number(!!warning);
+      Number(!!danger);
 
-    if (count > 1) return new Error('only one value can be added');
+    if (count > 1) {
+      return new Error(
+        'Only one of primary, secondary, success, warning, danger can be true'
+      );
+    }
   },
 };
 
