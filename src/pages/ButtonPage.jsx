@@ -1,9 +1,7 @@
 import Button from '../components/Button';
 
 function ButtonPage() {
-  const handleClick = () => {
-    console.log('Click');
-  };
+  const handleClick = () => {};
 
   return (
     <>
