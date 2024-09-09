@@ -1,4 +1,4 @@
-import Table from '../components/Table';
+import SortableTable from '../components/SortableTable';
 
 function TablePage() {
   const data = [
@@ -9,14 +9,22 @@ function TablePage() {
   ];
 
   const config = [
-    { label: 'Name', render: (guitar) => guitar.name },
+    {
+      label: 'Name',
+      render: (guitar) => guitar.name,
+      sortValue: (guitar) => guitar.name,
+    },
     {
       label: 'Color',
       render: (guitar) => (
         <div className={`p-3 m-2 border border-gray-300 ${guitar.color}`}></div>
       ),
     },
-    { label: 'Score', render: (guitar) => guitar.rank },
+    {
+      label: 'Rank',
+      render: (guitar) => guitar.rank,
+      sortValue: (guitar) => guitar.rank,
+    },
   ];
 
   const keyFn = (guitar) => {
@@ -25,7 +33,7 @@ function TablePage() {
 
   return (
     <div>
-      <Table data={data} config={config} keyFn={keyFn} />
+      <SortableTable data={data} config={config} keyFn={keyFn} />
     </div>
   );
 }
